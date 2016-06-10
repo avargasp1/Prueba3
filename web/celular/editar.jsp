@@ -62,7 +62,7 @@
             </tr>
         </table>
             <% }%>
-            <input type="hidden" name="editar" value="1">
+            <input type="hidden" name="editar">
             <input type="submit" value="Actualizar">
             </div>        
         </form>

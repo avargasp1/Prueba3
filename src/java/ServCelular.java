@@ -41,14 +41,16 @@ public class ServCelular extends HttpServlet {
                 celu.delete();
                 response.sendRedirect("/Prueba3/celular/index.jsp");
               
-           }if(request.getParameter("guardar").equals("1")){
+           }if(request.getParameter("guardar")!=null){
+               //out.println("SI DESEA GUARDAR");
+               
                 String chip =request.getParameter("chip");
                 String fecha_creacion = request.getParameter("fecha_creacion");
                 int numero = Integer.parseInt(request.getParameter("numero"));
                 int sistema_id = Integer.parseInt(request.getParameter("sistema_id"));
                 //out.println(chip +" "+ fecha_creacion +" "+ numero+" "+ sistema_id);
                 String creador = request.getParameter("creador");
-                out.println(creador);
+                //out.println(creador);
                 
                 celu.setTipoChip(chip);
                 celu.setFecha_creacion(fecha_creacion);
@@ -58,8 +60,9 @@ public class ServCelular extends HttpServlet {
                 celu.insert(); 
                 response.sendRedirect("/Prueba3/celular/index.jsp");
                
-           }if(request.getParameter("editar").equals("1")){
-                int celular_id = Integer.parseInt(request.getParameter("celular_id"));
+           }if(request.getParameter("editar")!=null){
+               
+               int celular_id = Integer.parseInt(request.getParameter("celular_id"));
                 String chip =request.getParameter("chip");
                 String fecha_creacion = request.getParameter("fecha");
                 int numero = Integer.parseInt(request.getParameter("numero"));
@@ -73,6 +76,7 @@ public class ServCelular extends HttpServlet {
                 celu.setCreador(creador);
                 celu.setCelular_id(celular_id);
                 celu.update();
+                
                 response.sendRedirect("/Prueba3/celular/index.jsp");
                
            }

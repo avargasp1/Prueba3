@@ -46,8 +46,8 @@
                     <td><input type="text" name="creador" value=""></td>
                 </tr>
             </table> 
-            <input type="hidden" value="1" name="guardar">
-            <input type="submit" value="Guardar">
+            
+            <input type="submit" value="Guardar" name="guardar">
         </form>
             
        
